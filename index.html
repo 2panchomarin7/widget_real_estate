@@ -636,71 +636,66 @@
             }
         }
 
+/* Mobile scroll fixes */
 @media (max-width: 768px) {
+    /* Hacer el widget más corto */
     .widget-container {
+        flex-direction: column;
+        min-height: auto;
         padding: 10px;
-        gap: 20px;
     }
     
     .filters-sidebar {
-        padding: 16px;
+        width: 100%;
+        margin-bottom: 20px;
+        max-height: 300px;
+        overflow-y: auto;
     }
     
-    .properties-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
-    .property-card {
-        margin: 0;
-    }
-    
-    .property-image-container {
-        height: 200px;
-    }
-    
-    .property-details {
-        padding: 16px;
-    }
-    
-    .property-price {
-        font-size: 20px;
-    }
-    
-    .property-title {
-        font-size: 16px;
+    /* Reducir altura del modal */
+    .modal.show {
+        align-items: flex-start;
+        padding-top: 20px;
     }
     
     .modal-content {
-        width: 100%;
-        height: 100vh;
-        max-height: 100vh;
-        border-radius: 0;
-        margin: 0;
+        max-height: 90vh;
+        border-radius: 12px;
+        margin: 0 10px;
+        width: calc(100% - 20px);
     }
-
+    
     .modal-gallery {
-        height: 250px;
+        height: 200px;
     }
     
     .modal-body {
-        padding: 16px;
-    }
-
-    .modal-features {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 16px;
-    }
-
-    .modal-actions {
-        flex-direction: column;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
-    .btn {
-        padding: 14px 20px;
-        font-size: 16px;
+    /* Hacer grid más compacto */
+    .properties-grid {
+        margin-bottom: 20px;
     }
+    
+    .property-card {
+        margin-bottom: 0;
+    }
+    
+    .property-image-container {
+        height: 180px;
+    }
+}
+
+/* Prevenir scroll conflicts */
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+.modal {
+    -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 480px) {
