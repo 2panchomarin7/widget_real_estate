@@ -636,30 +636,101 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .properties-grid {
-                grid-template-columns: 1fr;
-            }
+@media (max-width: 768px) {
+    .widget-container {
+        padding: 10px;
+        gap: 20px;
+    }
+    
+    .filters-sidebar {
+        padding: 16px;
+    }
+    
+    .properties-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .property-card {
+        margin: 0;
+    }
+    
+    .property-image-container {
+        height: 200px;
+    }
+    
+    .property-details {
+        padding: 16px;
+    }
+    
+    .property-price {
+        font-size: 20px;
+    }
+    
+    .property-title {
+        font-size: 16px;
+    }
+    
+    .modal-content {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
 
-            .modal-content {
-                width: 100%;
-                height: 100%;
-                max-height: 100%;
-                border-radius: 0;
-            }
+    .modal-gallery {
+        height: 250px;
+    }
+    
+    .modal-body {
+        padding: 16px;
+    }
 
-            .modal-gallery {
-                height: 300px;
-            }
+    .modal-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
 
-            .modal-features {
-                grid-template-columns: 1fr;
-            }
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
 
-            .modal-actions {
-                flex-direction: column;
-            }
-        }
+@media (max-width: 480px) {
+    .widget-container {
+        padding: 5px;
+    }
+    
+    .sort-bar {
+        padding: 12px 16px;
+    }
+    
+    .property-meta {
+        font-size: 12px;
+    }
+    
+    .filter-section {
+        margin-bottom: 20px;
+    }
+}
+        /* Iframe responsive fixes */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.widget-container {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+}
     </style>
 </head>
 <body>
